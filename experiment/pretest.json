@@ -1,39 +1,52 @@
-{
-  "version": 2.0,
-  "questions": [
-    {
-      "question": "This is a Sample Question 1?",
-      "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
+[
+  {
+    "question": "The XOR problem is an example of:",
+    "answers": {
+      "a": "Linearly separable problem",
+      "b": "Non-linearly separable problem",
+      "c": "Binary classification problem",
+      "d": "Regression problem"
     },
-    {
-      "question": "This is a Sample Question 2?",
-      "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
-    }
-  ]
-}
+    "correctAnswer": "b"
+  },
+  {
+    "question": "Why is a single-layer perceptron unable to solve the XOR problem?",
+    "answers": {
+      "a": "It lacks activation functions",
+      "b": "It lacks multiple neurons",
+      "c": "It cannot learn non-linear decision boundaries",
+      "d": "It does not have bias terms"
+    },
+    "correctAnswer": "c"
+  },
+  {
+    "question": "Which activation function is commonly used in the output layer of an MLP for binary classification problems?",
+    "answers": {
+      "a": "Sigmoid",
+      "b": "ReLU",
+      "c": "Tanh",
+      "d": "Softmax"
+    },
+    "correctAnswer": "a"
+  },
+  {
+    "question": "What is the primary purpose of a hidden layer in a Multi-Layer Perceptron (MLP)?",
+    "answers": {
+      "a": "Increase computational efficiency",
+      "b": "Extract and learn features from the input data",
+      "c": "Reduce the number of parameters",
+      "d": "Speed up the training process"
+    },
+    "correctAnswer": "b"
+  },
+  {
+    "question": "What is the purpose of the learning rate in the training of an MLP?",
+    "answers": {
+      "a": "To determine the number of hidden layers.",
+      "b": "To control the size of weight updates during backpropagation.",
+      "c": "To define the output of the neurons.",
+      "d": "To decide the number of epochs during training."
+    },
+    "correctAnswer": "b"
+  }
+]
