@@ -1,1 +1,1 @@
-### Aim of the experiment
+#### The aim of the experiment is to understand the fundamental working of a Multi-Layer Perceptron (MLP), focusing on its architecture, activation functions, and training processes.
