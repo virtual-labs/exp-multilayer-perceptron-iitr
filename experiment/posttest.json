@@ -1,39 +1,52 @@
-{
-  "version": 2.0,
-  "questions": [
-    {
-      "question": "This is a Sample Question 1?",
-      "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
+[
+  {
+    "question": "In an MLP, what is the role of the input layer?",
+    "answers": {
+      "a": "Performs computations",
+      "b": "Transfers data to the output layer",
+      "c": "Accepts input features and transfers to hidden layers",
+      "d": "Contains neurons with activation functions"
     },
-    {
-      "question": "This is a Sample Question 2?",
-      "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
-    }
-  ]
-}
+    "correctAnswer": "c"
+  },
+  {
+    "question": "What role does the learning rate play in the training of an MLP?",
+    "answers": {
+      "a": "It determines the size of weight updates during backpropagation.",
+      "b": "It specifies the number of hidden layers in the network.",
+      "c": "It controls the number of epochs during training.",
+      "d": "It is used to calculate the error between predicted and actual values."
+    },
+    "correctAnswer": "a"
+  },
+  {
+    "question": "What is the purpose of the output layer in an MLP?",
+    "answers": {
+      "a": "Feature extraction",
+      "b": "Decision making",
+      "c": "Non-linear transformation",
+      "d": "All of the above"
+    },
+    "correctAnswer": "b"
+  },
+  {
+    "question": "Which of the following statements is true regarding the XOR problem and MLPs?",
+    "answers": {
+      "a": "The XOR problem can be solved using a single-layer perceptron.",
+      "b": "The XOR problem highlights the importance of non-linear activation functions and multiple layers.",
+      "c": "The XOR problem is not suitable for neural network applications.",
+      "d": "The XOR problem is only relevant to image classification tasks."
+    },
+    "correctAnswer": "b"
+  },
+  {
+    "question": "The perceptron learning rule updates the weights based on:",
+    "answers": {
+      "a": "The difference between the predicted output and the target output",
+      "b": "The derivative of the activation function",
+      "c": "The gradient of the cost function",
+      "d": "The maximum likelihood estimation"
+    },
+    "correctAnswer": "a"
+  }
+]
