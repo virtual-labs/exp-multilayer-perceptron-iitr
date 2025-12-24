@@ -1,778 +1,590 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  </head>
-  <body>
 
-    <div class="container" id="containerx`">
-      <div id="myModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close">×</span>
-                <h2 style="text-align: left;">Instructions</h2>
-            </div>
-            <div class="modal-body">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
 
-                <ol type="1" style="font-size: 20px; text-align: justify;color:black">
-                  <li>Click on <b>CREATE</b> tab.</li>
-                  <li>
-                    Enter the target value for the XOR gate in the table, then click the <b>SUBMIT</b> button.
-                  </li>
-                  <li>
-                    Navigate to the <b>COMPUTE</b> tab in the header and click on it.
-                  </li>
-                  <li>
-                    Initiate the process by clicking the
-                    <b>GENERATE WEIGHTS</b> button to initialize weight values.
-                  </li>
-                  <li>
-                    Proceed to select values for the input nodes, specifically X₁
-                    and X₂. Confirm your selections by clicking the <b>SUBMIT</b> button.
-                  </li>
-                  <li>
-                    Identify the Zᵢ cell corresponding to the current
-                    row and input the appropriate Zᵢ value.
-                  </li>
-                  <li>Click the <b>ACTIVATION FUNCTION</b> button.</li>
-                  <li>
-                    Confirm result accuracy by clicking the <b>CHECK</b> button to
-                    compare target (X₁.X₂') and output values (f(Zᵢ)).
-                  </li>
-                  <li>If X₁.X₂' does not match f(Zᵢ), follow these steps. Else, jump to step 10:</li>
-                  <p style="padding-left: 14px; margin: 2px">
-                    9.1) Click the <b>UPDATE</b> button to adjust weights.
-                  </p>
-    
-                  <p style="padding-left: 14px; margin: 2px">
-                    9.2) Enter the learning rate value.
-                  </p>
-    
-                  <p style="padding-left: 14px; margin: 2px">
-                    9.3) Provide necessary values in the input boxes for W₁₁ and click <b>SUBMIT</b> button.
-                  </p>
-    
-                  <p style="padding-left: 14px; margin: 2px">
-                    9.4) Repeat the above step (9.3) for W₁₂.
-                  </p>
-    
-                  <li>
-                    Repeat steps 5 through 9 for all four combinations of X₁
-                    and X₂.
-                  </li>
-                  <li>
-                    Proceed by clicking the <b>NEXT</b> button to execute epochs until the predicted output is obtained for each input dataset.
-                  </li>
-                  <li> Lastly, proceed to the <b>ANALYZE</b> tab and select it. Generate the graph by clicking the <b>PLOT</b> button.
-                    
-                  </li>
-                  
-                </ol>
-                <h4 style="margin: 0px; margin-top: 8px; margin-bottom: 8px;color:#004E86">
-                  Formulae:
-                </h4>
-                <ul style="color:black">
-                  <li>Step Function: 
-                    <p
-                  style="
+<body>
+
+  <div class="container" id="containerx`">
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">×</span>
+          <h2 style="text-align: left;">Instructions</h2>
+        </div>
+        <div class="modal-body">
+
+          <ol type="1" style="font-size: 20px; text-align: justify;color:black">
+            <li>Click on <b>CREATE</b> tab.</li>
+            <li>
+              Enter the target value for the XOR gate in the table, then click the <b>SUBMIT</b> button.
+            </li>
+            <li>
+              Navigate to the <b>COMPUTE</b> tab in the header and click on it.
+            </li>
+            <li>
+              Initiate the process by clicking the
+              <b>GENERATE WEIGHTS</b> button to initialize weight values.
+            </li>
+            <li>
+              Proceed to select values for the input nodes, specifically X₁
+              and X₂. Confirm your selections by clicking the <b>SUBMIT</b> button.
+            </li>
+            <li>
+              Identify the Zᵢ cell corresponding to the current
+              row and input the appropriate Zᵢ value.
+            </li>
+            <li>Click the <b>ACTIVATION FUNCTION</b> button.</li>
+            <li>
+              Confirm result accuracy by clicking the <b>CHECK</b> button to
+              compare target (X₁.X₂') and output values (f(Zᵢ)).
+            </li>
+            <li>If X₁.X₂' does not match f(Zᵢ), follow these steps. Else, jump to step 10:</li>
+            <p style="padding-left: 14px; margin: 2px">
+              9.1) Click the <b>UPDATE</b> button to adjust weights.
+            </p>
+
+            <p style="padding-left: 14px; margin: 2px">
+              9.2) Enter the learning rate value.
+            </p>
+
+            <p style="padding-left: 14px; margin: 2px">
+              9.3) Provide necessary values in the input boxes for W₁₁ and click <b>SUBMIT</b> button.
+            </p>
+
+            <p style="padding-left: 14px; margin: 2px">
+              9.4) Repeat the above step (9.3) for W₁₂.
+            </p>
+
+            <li>
+              Repeat steps 5 through 9 for all four combinations of X₁
+              and X₂.
+            </li>
+            <li>
+              Proceed by clicking the <b>NEXT</b> button to execute epochs until the predicted output is obtained for
+              each input dataset.
+            </li>
+            <li> Lastly, proceed to the <b>ANALYZE</b> tab and select it. Generate the graph by clicking the <b>PLOT</b>
+              button.
+
+            </li>
+
+          </ol>
+          <h4 style="margin: 0px; margin-top: 8px; margin-bottom: 8px;color:#004E86">
+            Formulae:
+          </h4>
+          <ul style="color:black">
+            <li>Step Function:
+              <p style="
                     display: flex;
                     justify-content: center;
                     font-size: 18px;
                     margin: 4px;
-                  "
-                >
-                  <b>Zᵢ = Σ</b>
-                </p>
-                <p
-                  style="
+                  ">
+                <b>Zᵢ = Σ</b>
+              </p>
+              <p style="
                     display: flex;
                     justify-content: center;
                     font-size: 18px;
                     margin: 4px;
-                  "
-                >
-                  <b>f(Zᵢ) = 1 ,if Zᵢ >= 1</b>
-                </p>
-                <p
-                  style="
+                  ">
+                <b>f(Zᵢ) = 1 ,if Zᵢ >= 1</b>
+              </p>
+              <p style="
                     display: flex;
                     justify-content: center;
                     font-size: 18px;
                     margin: 4px;
-                  "
-                >
-                  <b>f(Zᵢ) = 0 ,if Zᵢ < 1</b>
-                </p>
-                <p  style="
+                  ">
+                <b>f(Zᵢ) = 0 ,if Zᵢ < 1</b>
+              </p>
+              <p style="
                 display: flex;
                 justify-content: center;
                 font-size: 18px;
                 margin: 4px;
               ">
-                  where, i = 1, 2
-                </p>
-                  </li>
-                  <li>Summation:
-                    <p style="margin: 4px">
-                      <span style="font-size: 20px;
-                      justify-content: center;display: flex;"
-                        >Σ = <span>X<sub>1</sub></span>
-                        <span>W<sub>11</sub></span> + <span>X<sub>2</sub></span>
-                          <span>W<sub>21</sub></span> + <span>X<sub>3</sub></span>
-                          <span>W<sub>31</sub></span> + ........ + <span>X<sub>n</sub></span>
-                          <span>W<sub>n</sub></span>
-                      </span>
-                    </p>
-                  </li>
-                </ul>
-            </div>
-            <div class="modal-footer">
-                <br>
-            </div>
+                where, i = 1, 2
+              </p>
+            </li>
+            <li>Summation:
+              <p style="margin: 4px">
+                <span style="font-size: 20px;
+                      justify-content: center;display: flex;">Σ = <span>X<sub>1</sub></span>
+                  <span>W<sub>11</sub></span> + <span>X<sub>2</sub></span>
+                  <span>W<sub>21</sub></span> + <span>X<sub>3</sub></span>
+                  <span>W<sub>31</sub></span> + ........ + <span>X<sub>n</sub></span>
+                  <span>W<sub>n</sub></span>
+                </span>
+              </p>
+            </li>
+          </ul>
         </div>
+        <div class="modal-footer">
+          <br>
+        </div>
+      </div>
     </div>
-     
 
-      
-      <header class="header">
+    <header class="header">
+      <div style="display: flex; height: 34px">
+        <!-- Demo -->
+         <!-- <div id="multi-level-perceptron"style="display: flex; border-right: 2px solid #F5F5F5; color: #FFC000;border-top-left-radius: 10px;">
+            <a href="Demo.html" style="text-decoration: none;"></a>
+          <div style="font-size: 20px; padding-left: 10px;padding-top: 5px; padding-right: 10px; font-weight: bold;">
+            DEMO
+          </div>     
+        </div> -->
 
-        <div style="display: flex; height: 34px">
-          <div
-            id="multi-level-perceptron"
-            style="display: flex; border-right: 2px solid #F5F5F5; color: #FFC000;border-top-left-radius: 10px;"
-          >
-            <div
-              style="
-                font-size: 20px;
-                padding-left: 10px;
-                padding-top: 5px;
-                padding-right: 10px;
-                font-weight: bold;
-              "
-            >
-              CREATE
-            </div>
-            <img id="selectimg"
-              src="images/create.png"
-              style="margin-top: 3px; margin-right: 10px; height: 85%"
-              alt=""
-            />
+        <!-- Create -->
+        <div id="multi-level-perceptron"style="display: flex; border-right: 2px solid #F5F5F5; color: #FFC000;border-top-left-radius: 10px;">
+          <div style="font-size: 20px;padding-left: 10px; padding-top: 5px;padding-right: 10px; font-weight: bold; ">CREATE</div>     
+          <img id="selectimg" src="images/create.png" style="margin-top: 3px; margin-right: 10px; height: 85%" alt="" />
+        </div>
+        
+         <!-- Compute -->
+        <div id="compute" style="display: flex; border-right: 2px solid #F5F5F5; color: #FFC000">
+          <div style="font-size: 20px; padding-top: 5px;padding-left: 10px;padding-right: 10px;font-weight: bold;">COMPUTE</div>
+          <img id="calimg" src="images/calculator1.png" style="margin-top: 3px; margin-right: 10px; height: 85%"alt="" />
+        </div>
+
+         <!-- Analyze -->
+        <div id="analyze" style="display: flex; border-right: 2px solid #F5F5F5; color: #FFC000">
+          <div style="font-size: 20px;padding-left: 10px;padding-top: 5px;padding-right: 10px;font-weight: bold;">ANALYZE</div>
+          <img id="anaimg" src="images/mlp-1.png" style="margin-top: 3px; margin-right: 10px; height: 85%" alt="" />
+        </div>
+      </div>
+      <span class="header-text" id="myBtn" style="padding-top: 9px;font-weight:bold">INSTRUCTIONS</span>
+    </header>
+
+
+    <div id="initial-hide">
+      <div class="sec-con">
+        <div class="network">
+          <header class="header-box" id="network-header">GENERAL ARCHITECTURE</header>
+          <div class="network-canva-one" style="display: flex; flex-direction: row">
+            <canvas id="network-canva-one" width="500" height="260"></canvas>
           </div>
-          <div
-            id="compute"
-            style="display: flex; border-right: 2px solid #F5F5F5; color: #FFC000"
-          >
-            <div
-              style="
-                font-size: 20px;
-                padding-top: 5px;
-                padding-left: 10px;
-                padding-right: 10px;
-                font-weight: bold;
-              "
-            >
-              COMPUTE
-            </div>
-            <img id="calimg"
-              src="images/calculator1.png"
-              style="margin-top: 3px; margin-right: 10px; height: 85%"
-              alt=""
-            />
+          <div class="network-canva-two">
+            <canvas class="network-canva-two-canva" width="500" height="240"></canvas>
+
           </div>
-          <div
-            id="analyze"
-            style="display: flex; border-right: 2px solid #F5F5F5; color: #FFC000"
-          >
-            <div
-              style="
-                font-size: 20px;
-                padding-left: 10px;
-                padding-top: 5px;
-                padding-right: 10px;
-                font-weight: bold;
-              "
-            >
-              ANALYZE
-            </div>
-            <img id="anaimg"
-              src="images/mlp-1.png"
-              style="margin-top: 3px; margin-right: 10px; height: 85%"
-              alt=""
-            />
+          <div class="network-canva-three">
+            <canvas id="network-canva-three" width="500" height="240"></canvas>
           </div>
         </div>
-        <span class="header-text" id="myBtn" style="padding-top: 9px;font-weight:bold"
-          >INSTRUCTIONS</span
-        >
-      </header>
+        <div class="controls">
+          <header class="header-box" id="div-heading">XOR TRUTH TABLE</header>
+          <div class="select-number" style="padding-top: 25px;">
 
-      
-      <div id="initial-hide">
-        <div class="sec-con">
-          <div class="network">
-            <header class="header-box" id="network-header">GENERAL ARCHITECTURE</header>
-            <div
-              class="network-canva-one"
-              style="display: flex; flex-direction: row"
-            >
-              <canvas id="network-canva-one" width="500" height="260"></canvas>
-            </div>
-            <div class="network-canva-two">
-              <canvas
-                class="network-canva-two-canva"
-                width="500"
-                height="240"
-              ></canvas>
-
-            </div>
-            <div class="network-canva-three">
-              <canvas
-                id="network-canva-three"
-                width="500"
-                height="240"
-              ></canvas>
+            <table id="Truth-Table" style="width: 80%; margin-top: 0px">
+              <tr>
+                <th style="width: 10%">X₁</th>
+                <th style="width: 10%">X₂</th>
+                <th style="width: 15%">X₁ &oplus; X₂</th>
+              </tr>
+              <tr>
+                <td>0</td>
+                <td>0</td>
+                <td contenteditable="true"></td>
+              </tr>
+              <tr>
+                <td>0</td>
+                <td>1</td>
+                <td contenteditable="true"></td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>0</td>
+                <td contenteditable="true"></td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>1</td>
+                <td contenteditable="true"></td>
+              </tr>
+            </table>
+            <div style="text-align: center;">
+              <button id="create-Truth-table" style="position:relative;left:5px">
+                SUBMIT
+              </button>
             </div>
           </div>
-          <div class="controls">
-            <header class="header-box" id="div-heading">XOR TRUTH TABLE</header>
-            <div class="select-number" style="padding-top: 25px;">
-              
-                <table id="Truth-Table" style="width: 80%; margin-top: 0px">
-                  <tr>
-                    <th style="width: 10%">X₁</th>
-                    <th style="width: 10%">X₂</th>
-                    <th style="width: 15%">X₁ &oplus; X₂</th>
-                  </tr>
-                  <tr>
-                    <td>0</td>
-                    <td>0</td>
-                    <td contenteditable="true"></td>
-                  </tr>
-                  <tr>
-                    <td>0</td>
-                    <td>1</td>
-                    <td contenteditable="true"></td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>0</td>
-                    <td contenteditable="true"></td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>1</td>
-                    <td contenteditable="true"></td>
-                  </tr>
-              </table>
-              <div style="text-align: center;">
-                <button id="create-Truth-table" style="position:relative;left:5px">
-                  SUBMIT
-                </button>
-              </div>
-            </div>
-            <div class="number-selected">
-              <div class="for-two-input">
-                <div style="display: flex; padding-top: 10px">
-                  <div class="controllers">
-                   
+          <div class="number-selected">
+            <div class="for-two-input">
+              <div style="display: flex; padding-top: 10px">
+                <div class="controllers">
 
-                    <div>
-                      <label for="gate value" id="input1" class="labels"
-                        >X<sub>1</sub>:</label
-                      >
-                      <select
-                        id="variable-one"
-                        name="gate-value"
-                        style="width: 86px; height: 28px"
-                      >
-                       
-                        <option selected hidden></option>
-                   
-                        <option class="for-and" value="0">0</option>
-                        <option class="for-and" value="1">1</option>
-                      </select>
-                     
 
-                      <label for="" class="labels" id="weight1"
-                        >&nbsp; &nbsp;W<sub>11</sub>:</label
-                      >
-                      <input
-                        class="controller-inputs weight-one-class"
-                        type="number"
-                        min="0"
-                        max="1"
-                        id="weight-one"
-                        type="text"
-                      />
-                    </div>
-                   
-                    <div style="margin-top:20px">
-                      <label for="" id="input2" class="labels">X<sub>2</sub>:</label>
-                      <select
-                        name="gate-value"
-                        id="variable-two"
-                        style="width: 86px; height: 28px"
-                      >
-                        
-                        <option selected hidden></option>
-                     
-                        <option class="for-and" value="0">0</option>
-                        <option class="for-and" value="1">1</option>
-                      </select>
-                     
+                  <div>
+                    <label for="gate value" id="input1" class="labels">X<sub>1</sub>:</label>
+                    <select id="variable-one" name="gate-value" style="width: 86px; height: 28px">
 
-                      <label for="" id="weight2" class="labels">
-                        &nbsp; &nbsp;W<sub>21</sub>:</label
-                      >
-                      <input
-                        class="controller-inputs weight-two-class"
-                        type="number"
-                        min="0"
-                        max="1"
-                        id="weight-two"
-                        type="text"
-                      />
-                    </div>
+                      <option selected hidden></option>
+
+                      <option class="for-and" value="0">0</option>
+                      <option class="for-and" value="1">1</option>
+                    </select>
+
+
+                    <label for="" class="labels" id="weight1">&nbsp; &nbsp;W<sub>11</sub>:</label>
+                    <input class="controller-inputs weight-one-class" type="number" min="0" max="1" id="weight-one"
+                      type="text" />
                   </div>
-                  <div class="controllers-btn" style="margin-top: 0px">
-                    <button class="btns" id="reset">RESET</button>
-                    <button class="btns" id="submit">SUBMIT</button>
 
-                    <button class="btns" id="check" disabled>CHECK</button>
+                  <div style="margin-top:20px">
+                    <label for="" id="input2" class="labels">X<sub>2</sub>:</label>
+                    <select name="gate-value" id="variable-two" style="width: 86px; height: 28px">
 
-                    <button class="btns" id="update" disabled>UPDATE</button>
+                      <option selected hidden></option>
 
-                    <button class="btns" id="graph" disabled>NEXT</button>
+                      <option class="for-and" value="0">0</option>
+                      <option class="for-and" value="1">1</option>
+                    </select>
+
+
+                    <label for="" id="weight2" class="labels">
+                      &nbsp; &nbsp;W<sub>21</sub>:</label>
+                    <input class="controller-inputs weight-two-class" type="number" min="0" max="1" id="weight-two"
+                      type="text" />
                   </div>
                 </div>
+                <div class="controllers-btn" style="margin-top: 0px">
+                  <button class="btns" id="reset">RESET</button>
+                  <button class="btns" id="submit">SUBMIT</button>
 
-                <div
-                  style="
+                  <button class="btns" id="check" disabled>CHECK</button>
+
+                  <button class="btns" id="update" disabled>UPDATE</button>
+
+                  <button class="btns" id="graph" disabled>NEXT</button>
+                </div>
+              </div>
+
+              <div style="
                     padding-top: 16px;
                     padding-left: 30px;
                     margin-top: -106px;
                     display: flex;
                     flex-direction: column;
-                  "
-                >
-                <button
-                class="btns"
-                style="
+                  ">
+                <button class="btns" style="
                   width: 250px;
-      "
-                id="generateWeight">
-                INITIALIZE WEIGHT
-              </button>
+      " id="generateWeight">
+                  INITIALIZE WEIGHT
+                </button>
 
-                  <button
-                    class="btns"
-                    id="activation"
-                    style="
+                <button class="btns" id="activation" style="
                       width: 250px;">
-                    ACTIVATION FUNCTION
-                  </button>
-                 
+                  ACTIVATION FUNCTION
+                </button>
 
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="hollow"></div>
-          <div class="terminology">
-            <header class="header-box">TERMINOLOGY</header>
-            <div style="font-size: 0px; margin-left: 20px">
-              <p style="margin: 12px">
-                <span style="font-size: 20px;color:#004E86"> X<sub>i</sub></span>
-                <span style="font-size: 28px;color:#004E86"> : </span>
-                <span style="font-size: 20px"
-                  >Input values i.e.
-                  <span>X<sub>1</sub> </span> , <span>X<sub>2</sub></span> , ...... <span>X<sub>n</sub></span></span
-                >
-              </p>
-              <p style="margin: 12px">
-                <span style="font-size: 20px;color:#004E86"> W<sub>ij</sub></span>
-                <span style="font-size: 28px;color:#004E86"> : </span>
-                <span style="font-size: 20px"
-                  >The values corresponding to weights i.e.
-                  <span>W<sub>11</sub> </span>, <span>W<sub>12</sub> </span> , ...... <span>W<sub>mn</sub></span></span
-                >
-              </p>
-              
-              <p style="margin: 12px">
-                <span style="font-size: 24px;color:#004E86"> Y<sub>i</sub></span>
-                <span style="font-size: 28px;color:#004E86"> : </span>
-                <span style="font-size: 20px">Output Values i.e. <span>Y<sub>1</sub> </span> , <span>Y<sub>2</sub></span> , ...... <span>Y<sub>n</sub></span></span>
-              </p>
-
-              <p style="margin: 12px">
-                <span style="font-size: 24px;color:#004E86"> X<sub>1</sub> &oplus; X<sub>2</sub></span>
-                <span style="font-size: 28px;color:#004E86"> : </span>
-                <span style="font-size: 20px"><span>X<sub>1</sub>'</span> . <span>X<sub>2</sub></span> + <span>X<sub>1</sub></span> . <span>X<sub>2</sub>'</span></span>
-              </p>
-
-            </div>
-          </div>
-          <div class="sec-con-sec-row">
-            <div style="display: flex; margin-top: 6px; height: 260px">
-              <div class="observation-table">
-                <header class="header-box">
-                  OBSERVATION TABLE FOR <span class="epochNumber"></span>
-                </header>
-                <table id="myTable" style="width: 80%; margin-top: 16px">
-                  <tr>
-
-                    <th style="width: 11%">S No</th>
-                    <th style="width: 10%">X₁</th>
-                    <th style="width: 10%">X₂</th>
-                    <th style="width: 15%">X₁.X₂'</th>
-                    <th style="width: 10%">Z₁</th>
-                    <th style="width: 10%">f(Z₁)</th>
-                    <th style="width: 10%">ΔW₁₁</th>
-                    <th style="width: 10%">ΔW₁₂</th>
-                    <th style="width: 10%">W₁₁</th>
-                    <th style="width: 10%">W₁₂</th>
-                    
-                  </tr>
-                </table>
-
-                <table id="myTable2" style="width: 80%; margin-top: 16px;display:none">
-                  <tr>
-
-                    <th style="width: 11%">S No</th>
-                    <th style="width: 10%">X₁</th>
-                    <th style="width: 10%">X₂</th>
-                    <th style="width: 10%">Z₁</th>
-                    <th style="width: 10%">Z₂</th>
-                    <th style="width: 27%">Z₁ + Z₂</th>
-                    <th style="width: 35%">Y=Z₁.V₁ + Z₂.V₂</th>
-                    <th style="width: 10%">f(Y)</th>
-                    <th style="width: 10%">ΔV₁</th>
-                    <th style="width: 10%">ΔV₂</th>
-                    <th style="width: 10%">V₁</th>
-                    <th style="width: 10%">V₂</th>
-                    
-                  </tr>
-                </table>
 
               </div>
-
-              
-              <div class="calculation">
-                <header class="header-box">CALCULATION</header>
-                <div class="calculation-div" style="margin: 18px">
-                  <p style="font-size: 20px;color:#004E86">
-                    <span class="calculation-header"></span>
-                    <span id="superscript"></span>
-                    <span>Row</span>
-                  </p>
-                  <div>
-                    <div>
-                      <div style="display: flex">
-                        <span style="font-size: 20px; display: flex">
-                          <span>W<sub>11</sub></span>
-                          <span style="width: 70px">(new) =</span>
-                        </span>
-                        <div id="new-weight-one-div">
-                          <input
-                            type="text"
-                            placeholder="W₁₁(old)"
-                            id="old-weight-one"
-                            style="width: 18%"
-                          />
-                          <span>+</span>
-
-                          <span style="width: 6%"   title="learning-rate" class="learning-rate">α</span>
-                          <span>( </span>
-                          <input
-                            type="text"
-                            placeholder="X₁.X₂'"
-                            name=""
-                            id="target-one"
-                            style="width: 11%"
-                          />
-                          <span>-</span>
-                          <input
-                            type="text"
-                            placeholder="f(Z₁)"
-                            name=""
-                            id="input-one"
-                            style="width: 11%"
-                          />
-                          <span> )</span>
-                          <span>*</span>
-                          <input
-                          type="text"
-                          placeholder="X₁"
-                          name=""
-                          id="input-x1"
-                          style="width: 9%"
-                        />
-                        </div>
-                        <span id="new-weight-one-value"></span>
-                      </div><br>
-                      <div style="margin-top: 10px; display: flex">
-                        <span style="font-size: 20px; display: flex">
-                          <span>W<sub>12</sub></span>
-                          <span style="width: 70px">(new) =</span>
-                        </span>
-                        <div id="new-weight-two-div">
-                          <input
-                            type="text"
-                            id="old-weight-two"
-                            placeholder="W₁₂(old)"
-                            style="width: 18%"
-                          />
-                          <span>+</span>
-
-                          <span style="width: 6%" title="learning-rate" class="learning-rate">α</span>
-                          <span>( </span>
-                          <input
-                            type="text"
-                            placeholder="X₁.X₂'"
-                            id="target-two"
-                            name=""
-                            id=""
-                            style="width: 11%"
-                          />
-                          <span>-</span>
-                          <input
-                            type="text"
-                            placeholder="f(Z₁)"
-                            name=""
-                            id="input-two"
-                            style="width: 11%"
-                          />
-                          <span> )</span>
-                          <span>*</span>
-                          <input
-                          type="text"
-                          placeholder="X₂"
-                          name=""
-                          id="input-x2"
-                          style="width: 9%"
-                        />
-                        </div>
-                        <span id="new-weight-two-value"></span>
-                      </div><br>
-                 
-                    </div>
-                    <div align="center">
-                      <button class="btns" id="calculate-new-weight">
-                        SUBMIT
-                      </button>
-                     
-                      <button class="btns" id="reset-input-values" title="Resets the value in the input box.">
-                        RESET
-                      </button>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="calculation2-div" style="margin: 18px">
-                  <p style="font-size: 20px;color:#004E86">
-                    <span class="calculation-header2"></span>
-                    <span id="superscript2"></span>
-                    <span>Row</span>
-                  </p>
-                  <div>
-                    <div>
-                      <div style="display: flex">
-                        <span style="font-size: 20px; display: flex">
-                          <span>W<sub>12</sub></span>
-                          <span style="width: 70px">(new) =</span>
-                        </span>
-                        <div id="new-weight-one-div2">
-                          <input
-                            type="text"
-                            placeholder="W₁₂(old)"
-                            id="old-weight2-one"
-                            style="width: 18%"
-                          />
-                          <span>+</span>
-
-                          <span style="width: 6%"   title="learning-rate" class="learning-rate2">α</span>
-                          <span>( </span>
-                          <input
-                            type="text"
-                            placeholder="X₁'.X₂"
-                            name=""
-                            id="target2-one"
-                            style="width: 11%"
-                          />
-                          <span>-</span>
-                          <input
-                            type="text"
-                            placeholder="f(Z₂)"
-                            name=""
-                            id="input2-one"
-                            style="width: 11%"
-                          />
-                          <span> )</span>
-                          <span>*</span>
-                          <input
-                          type="text"
-                          placeholder="X₁"
-                          name=""
-                          id="input2-x1"
-                          style="width: 9%"
-                        />
-                        </div>
-                        <span id="new-weight-one-value2"></span>
-                      </div><br>
-                      <div style="margin-top: 10px; display: flex">
-                        <span style="font-size: 20px; display: flex">
-                          <span>W<sub>22</sub></span>
-                          <span style="width: 70px">(new) =</span>
-                        </span>
-                        <div id="new-weight-two-div2">
-                          <input
-                            type="text"
-                            id="old-weight2-two"
-                            placeholder="W₂₂(old)"
-                            style="width: 18%"
-                          />
-                          <span>+</span>
-
-                          <span style="width: 6%" title="learning-rate" class="learning-rate2">α</span>
-                          <span>( </span>
-                          <input
-                            type="text"
-                            placeholder="X₁'.X₂"
-                            id="target2-two"
-                            name=""
-                            id=""
-                            style="width: 11%"
-                          />
-                          <span>-</span>
-                          <input
-                            type="text"
-                            placeholder="f(Z₂)"
-                            name=""
-                            id="input2-two"
-                            style="width: 11%"
-                          />
-                          <span> )</span>
-                          <span>*</span>
-                          <input
-                          type="text"
-                          placeholder="X₂"
-                          name=""
-                          id="input2-x2"
-                          style="width: 9%"
-                        />
-                        </div>
-                        <span id="new-weight-two-value2"></span>
-                      </div><br>
-                 
-                    </div>
-                    <div align="center">
-                      <button class="btns" id="calculate-new-weight-z2">
-                        SUBMIT
-                      </button>
-                     
-                      <button class="btns" id="reset-input-values-z2" title="Resets the value in the input box.">
-                        RESET
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-             
-
             </div>
           </div>
         </div>
-      </div>
-      <div class="analyze-div">
-        <div style="display: flex">
-          <div class="first-div">
-            <div class="first-div-network">
-              <div class="header-box">XOR ARCHITECTURE</div>
-           
-              <canvas
-                class="network-canva-analyze"
-                width="500"
-                height="240"
-              ></canvas>
+        <div class="hollow"></div>
+        <div class="terminology">
+          <header class="header-box">TERMINOLOGY</header>
+          <div style="font-size: 0px; margin-left: 20px">
+            <p style="margin: 12px">
+              <span style="font-size: 20px;color:#004E86"> X<sub>i</sub></span>
+              <span style="font-size: 28px;color:#004E86"> : </span>
+              <span style="font-size: 20px">Input values i.e.
+                <span>X<sub>1</sub> </span> , <span>X<sub>2</sub></span> , ...... <span>X<sub>n</sub></span></span>
+            </p>
+            <p style="margin: 12px">
+              <span style="font-size: 20px;color:#004E86"> W<sub>ij</sub></span>
+              <span style="font-size: 28px;color:#004E86"> : </span>
+              <span style="font-size: 20px">The values corresponding to weights i.e.
+                <span>W<sub>11</sub> </span>, <span>W<sub>12</sub> </span> , ...... <span>W<sub>mn</sub></span></span>
+            </p>
+
+            <p style="margin: 12px">
+              <span style="font-size: 24px;color:#004E86"> Y<sub>i</sub></span>
+              <span style="font-size: 28px;color:#004E86"> : </span>
+              <span style="font-size: 20px">Output Values i.e. <span>Y<sub>1</sub> </span> , <span>Y<sub>2</sub></span>
+                , ...... <span>Y<sub>n</sub></span></span>
+            </p>
+
+            <p style="margin: 12px">
+              <span style="font-size: 24px;color:#004E86"> X<sub>1</sub> &oplus; X<sub>2</sub></span>
+              <span style="font-size: 28px;color:#004E86"> : </span>
+              <span style="font-size: 20px"><span>X<sub>1</sub>'</span> . <span>X<sub>2</sub></span> +
+                <span>X<sub>1</sub></span> . <span>X<sub>2</sub>'</span></span>
+            </p>
+
+          </div>
+        </div>
+        <div class="sec-con-sec-row">
+          <div style="display: flex; margin-top: 6px; height: 260px">
+            <div class="observation-table">
+              <header class="header-box">
+                OBSERVATION TABLE FOR <span class="epochNumber"></span>
+              </header>
+              <table id="myTable" style="width: 80%; margin-top: 16px">
+                <tr>
+
+                  <th style="width: 11%">S No</th>
+                  <th style="width: 10%">X₁</th>
+                  <th style="width: 10%">X₂</th>
+                  <th style="width: 15%">X₁.X₂'</th>
+                  <th style="width: 10%">Z₁</th>
+                  <th style="width: 10%">f(Z₁)</th>
+                  <th style="width: 10%">ΔW₁₁</th>
+                  <th style="width: 10%">ΔW₁₂</th>
+                  <th style="width: 10%">W₁₁</th>
+                  <th style="width: 10%">W₁₂</th>
+
+                </tr>
+              </table>
+
+              <table id="myTable2" style="width: 80%; margin-top: 16px;display:none">
+                <tr>
+
+                  <th style="width: 11%">S No</th>
+                  <th style="width: 10%">X₁</th>
+                  <th style="width: 10%">X₂</th>
+                  <th style="width: 10%">Z₁</th>
+                  <th style="width: 10%">Z₂</th>
+                  <th style="width: 27%">Z₁ + Z₂</th>
+                  <th style="width: 35%">Y=Z₁.V₁ + Z₂.V₂</th>
+                  <th style="width: 10%">f(Y)</th>
+                  <th style="width: 10%">ΔV₁</th>
+                  <th style="width: 10%">ΔV₂</th>
+                  <th style="width: 10%">V₁</th>
+                  <th style="width: 10%">V₂</th>
+
+                </tr>
+              </table>
+
             </div>
-            <div class="observation-table-div">
-              <div class="header-box">E-XOR GATE TRUTH TABLE</div>
-             
-              <div style="display: flex">
-                <div
-                  id="table-container"
-                  style="width: 50%; margin-left: 13px; margin-top: 24px"
-                >
-                  <!-- The table will be generated here -->
+
+
+            <div class="calculation">
+              <header class="header-box">CALCULATION</header>
+              <div class="calculation-div" style="margin: 18px">
+                <p style="font-size: 20px;color:#004E86">
+                  <span class="calculation-header"></span>
+                  <span id="superscript"></span>
+                  <span>Row</span>
+                </p>
+                <div>
+                  <div>
+                    <div style="display: flex">
+                      <span style="font-size: 20px; display: flex">
+                        <span>W<sub>11</sub></span>
+                        <span style="width: 70px">(new) =</span>
+                      </span>
+                      <div id="new-weight-one-div">
+                        <input type="text" placeholder="W₁₁(old)" id="old-weight-one" style="width: 18%" />
+                        <span>+</span>
+
+                        <span style="width: 6%" title="learning-rate" class="learning-rate">α</span>
+                        <span>( </span>
+                        <input type="text" placeholder="X₁.X₂'" name="" id="target-one" style="width: 11%" />
+                        <span>-</span>
+                        <input type="text" placeholder="f(Z₁)" name="" id="input-one" style="width: 11%" />
+                        <span> )</span>
+                        <span>*</span>
+                        <input type="text" placeholder="X₁" name="" id="input-x1" style="width: 9%" />
+                      </div>
+                      <span id="new-weight-one-value"></span>
+                    </div><br>
+                    <div style="margin-top: 10px; display: flex">
+                      <span style="font-size: 20px; display: flex">
+                        <span>W<sub>12</sub></span>
+                        <span style="width: 70px">(new) =</span>
+                      </span>
+                      <div id="new-weight-two-div">
+                        <input type="text" id="old-weight-two" placeholder="W₁₂(old)" style="width: 18%" />
+                        <span>+</span>
+
+                        <span style="width: 6%" title="learning-rate" class="learning-rate">α</span>
+                        <span>( </span>
+                        <input type="text" placeholder="X₁.X₂'" id="target-two" name="" id="" style="width: 11%" />
+                        <span>-</span>
+                        <input type="text" placeholder="f(Z₁)" name="" id="input-two" style="width: 11%" />
+                        <span> )</span>
+                        <span>*</span>
+                        <input type="text" placeholder="X₂" name="" id="input-x2" style="width: 9%" />
+                      </div>
+                      <span id="new-weight-two-value"></span>
+                    </div><br>
+
+                  </div>
+                  <div align="center">
+                    <button class="btns" id="calculate-new-weight">
+                      SUBMIT
+                    </button>
+
+                    <button class="btns" id="reset-input-values" title="Resets the value in the input box.">
+                      RESET
+                    </button>
+                  </div>
                 </div>
-                <div style="width: 50%; margin-left: 13px">
-                  <div class="xor-gate-pic" style="margin-right: 14px">
-                    <p style="padding-left: 68px; padding-top: 32px;color:#004E86">
-                      EXOR GATE
-                    </p>
-                    <img
-                      style="width: 100%; margin-top: 2px"
-                      src="images/xor.jpg"
-                      alt=""
-                    />
+              </div>
+
+              <div class="calculation2-div" style="margin: 18px">
+                <p style="font-size: 20px;color:#004E86">
+                  <span class="calculation-header2"></span>
+                  <span id="superscript2"></span>
+                  <span>Row</span>
+                </p>
+                <div>
+                  <div>
+                    <div style="display: flex">
+                      <span style="font-size: 20px; display: flex">
+                        <span>W<sub>12</sub></span>
+                        <span style="width: 70px">(new) =</span>
+                      </span>
+                      <div id="new-weight-one-div2">
+                        <input type="text" placeholder="W₁₂(old)" id="old-weight2-one" style="width: 18%" />
+                        <span>+</span>
+
+                        <span style="width: 6%" title="learning-rate" class="learning-rate2">α</span>
+                        <span>( </span>
+                        <input type="text" placeholder="X₁'.X₂" name="" id="target2-one" style="width: 11%" />
+                        <span>-</span>
+                        <input type="text" placeholder="f(Z₂)" name="" id="input2-one" style="width: 11%" />
+                        <span> )</span>
+                        <span>*</span>
+                        <input type="text" placeholder="X₁" name="" id="input2-x1" style="width: 9%" />
+                      </div>
+                      <span id="new-weight-one-value2"></span>
+                    </div><br>
+                    <div style="margin-top: 10px; display: flex">
+                      <span style="font-size: 20px; display: flex">
+                        <span>W<sub>22</sub></span>
+                        <span style="width: 70px">(new) =</span>
+                      </span>
+                      <div id="new-weight-two-div2">
+                        <input type="text" id="old-weight2-two" placeholder="W₂₂(old)" style="width: 18%" />
+                        <span>+</span>
+
+                        <span style="width: 6%" title="learning-rate" class="learning-rate2">α</span>
+                        <span>( </span>
+                        <input type="text" placeholder="X₁'.X₂" id="target2-two" name="" id="" style="width: 11%" />
+                        <span>-</span>
+                        <input type="text" placeholder="f(Z₂)" name="" id="input2-two" style="width: 11%" />
+                        <span> )</span>
+                        <span>*</span>
+                        <input type="text" placeholder="X₂" name="" id="input2-x2" style="width: 9%" />
+                      </div>
+                      <span id="new-weight-two-value2"></span>
+                    </div><br>
+
+                  </div>
+                  <div align="center">
+                    <button class="btns" id="calculate-new-weight-z2">
+                      SUBMIT
+                    </button>
+
+                    <button class="btns" id="reset-input-values-z2" title="Resets the value in the input box.">
+                      RESET
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
+
+
+
           </div>
-          <div>
-            <div class="second-div">
-             
-              <div class="header-box">GRAPH</div>
-              <div style="height: 470px;">
-                <div class="show-plot">
-                  <div id="plot" style="width: 455px;height: 468px;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="analyze-div">
+      <div style="display: flex">
+        <div class="first-div">
+          <div class="first-div-network">
+            <div class="header-box">XOR ARCHITECTURE</div>
+
+            <canvas class="network-canva-analyze" width="500" height="240"></canvas>
+          </div>
+          <div class="observation-table-div">
+            <div class="header-box">E-XOR GATE TRUTH TABLE</div>
+
+            <div style="display: flex">
+              <div id="table-container" style="width: 50%; margin-left: 13px; margin-top: 24px">
+                <!-- The table will be generated here -->
+              </div>
+              <div style="width: 50%; margin-left: 13px">
+                <div class="xor-gate-pic" style="margin-right: 14px">
+                  <p style="padding-left: 68px; padding-top: 32px;color:#004E86">
+                    EXOR GATE
+                  </p>
+                  <img style="width: 100%; margin-top: 2px" src="images/xor.jpg" alt="" />
                 </div>
               </div>
-
-              <!-- </div> -->
             </div>
-            <div
-              style="
+          </div>
+        </div>
+        <div>
+          <div class="second-div">
+
+            <div class="header-box">GRAPH</div>
+            <div style="height: 470px;">
+              <div class="show-plot">
+                <div id="plot" style="width: 455px;height: 468px;"></div>
+              </div>
+            </div>
+
+            <!-- </div> -->
+          </div>
+          <div style="
                 display: flex;
                 width: 100%;
                 justify-content: space-around;
                 margin-left: 20px;
                 margin-top: 15px;
-              "
-            >
-              <button class="btns show-graph-btn plot-btn">PLOT</button>
-              <button class="btns print-btn" onclick="window.print()">
-                PRINT
-              </button>
-            </div>
+              ">
+            <button class="btns show-graph-btn plot-btn">PLOT</button>
+            <button class="btns print-btn" onclick="window.print()">
+              PRINT
+            </button>
           </div>
         </div>
       </div>
-
-      <div id="aim" style="width:80%;margin-top: 2.5in; margin-left: 1in;">
-        <center>
-            <p style="color:#004E86;font-size: 24px;text-align: justify;">
-                <b>MLP:</b> <span style="color:#333;font-size: 24px;text-align: justify;">Through this simulation we will execute the XOR problem. 
-                  To start click on the <b style="color:#004E86;">CREATE</b>.</span>
-             </p>
-             
-        </center>
-        
+    </div>
+    <!-- To start the experiment -->
+    <div id="aim" style="width:80%;margin-top: 2.5in; margin-left: 1in;">
+      <center>
+        <p style="color:#004E86;font-size: 24px;text-align: justify;">
+          <b>MLP:</b>
+          <span style="color:#333;font-size: 24px;">
+            Through this simulation, we will execute the XOR problem.
+          </span>
+        </p>
+      <p style="color:#333;font-size: 22px; text-align: justify;">Watch the
+        <a href="Demo.html" style="color:#003A8F;font-weight:bold;text-decoration:none; background:#FFE082; padding:4px 10px; border-radius:6px;" 
+          onmouseover="this.style.background='#FFD54F'"onmouseout="this.style.background='#FFE082'">DEMO
+        </a>
+          first to see how the experiment is performed.After that, click on the
+         <b style="color:#004E86;">CREATE</b> tab and run the experiment.
+      </p>
+      </center>
     </div>
 
-      <footer class="footer">
-        <span class="footer-text">© 2025 Virtual Labs, IIT Roorkee</span>
-      </footer>
-    </div>
+<!-- End -->
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="js/script.js"></script>
-  </body>
+  <footer class="footer">
+    <span class="footer-text">© 2025 Virtual Labs, IIT Roorkee</span>
+  </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="js/script.js"></script>
+</body>
+
 </html>

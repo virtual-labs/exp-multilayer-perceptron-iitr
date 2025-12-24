@@ -6,8 +6,7 @@ MLP consists of an input layer, where each input corresponds to a single neuron 
 #### **Why MLP?**
 The XOR (exclusive OR) problem is a classic example that highlights the limitations of a Single-Layer Perceptron (SLP), in solving non-linearly separable problems. The XOR problem involves two binary inputs (0 and 1) and produces a binary output based on the exclusive OR logic:
 <center><strong>Table 1: XOR truth table</strong></center>
-<center>
-<table>
+<table align="center">
   <tr>
     <th>X₁</th>
     <th>X₂</th>
@@ -19,12 +18,11 @@ The XOR (exclusive OR) problem is a classic example that highlights the limitati
   <tr style="text-align:center;"><td>1</td><td>0</td><td >1</td></tr>
   <tr style="text-align:center;"><td>1</td><td>1</td><td >0</td></tr>
 </table>
-</center>
 
 The goal is to find a decision boundary that separates the two classes (output 0 and output 1).
 
 <center>  
-<img style="mix-blend-mode: darken;" src="images\plot.png" width="40%" alt="Signal element versus data element">
+<img style="mix-blend-mode: darken;" width="350px" src="images\plot.png" alt="Signal element versus data element">
 <figcaption><strong>Fig. 1 Signal element versus data element</strong></figcaption>
 </center>
 <br>
@@ -66,7 +64,7 @@ The activation of the neuron is computed in two steps:
         <li>
             Equation:
         <center>  
-            <img style="mix-blend-mode: darken;" src="images\sigmoid.png" width="30%" alt="Sigmoid equation">
+            <img style="mix-blend-mode: darken;" width="250px" src="images\sigmoid.png" alt="Sigmoid equation">
             <figcaption><strong>Fig. 3 Sigmoid equation</strong></figcaption>
             </center>
         </li>
@@ -81,7 +79,7 @@ The activation of the neuron is computed in two steps:
         <li>
             Equation:
         <center>  
-            <img style="mix-blend-mode: darken;" src="images\tanh.png" width="30%" alt="Tanh equation">
+            <img style="mix-blend-mode: darken;" width="350px" src="images\tanh.png" alt="Tanh equation">
             <figcaption><strong>Fig. 4 Tanh equation</strong></figcaption>
             </center>
         </li>
@@ -96,7 +94,7 @@ The activation of the neuron is computed in two steps:
         <li>
             Equation:
         <center>  
-            <img style="mix-blend-mode: darken;" src="images\relu.png" width="30%" alt="ReLU equation">
+            <img style="mix-blend-mode: darken;" width="350px" src="images\relu.png" alt="ReLU equation">
             <figcaption><strong>Fig. 5 ReLU equation</strong></figcaption>
             </center>
         </li>
@@ -104,7 +102,7 @@ The activation of the neuron is computed in two steps:
         <li>Value Range: [0, inf)</li>
         <li>Uses: ReLu is less computationally expensive than tanh and sigmoid because it involves simpler mathematical operations.</li>
         <center>  
-            <img style="mix-blend-mode: darken;" width="50%" src="images\model.jpg" alt="Pictorial representation of computing activation of the perceptron">
+            <img style="mix-blend-mode: darken;" width="500px" src="images\model.jpg" alt="Pictorial representation of computing activation of the perceptron">
             <figcaption><strong>Fig. 6 Pictorial representation of computing activation of the perceptron</strong></figcaption>
             </center>
         </ul>
@@ -122,7 +120,7 @@ To learn XOR, we use a multi-layer perceptron (MLP) — a neural network with on
 ### **Rewriting XOR Function**
 We can rewrite XOR as a combination of two linearly separable functions:
 
-### <center>A ⊕ B = A . B′ + A′ . B</center>
+ <center>A ⊕ B = A . B′ + A′ . B</center>
 
 Now let’s interpret this expression step by step:
 * Neuron 1 can learn the function A . B′
