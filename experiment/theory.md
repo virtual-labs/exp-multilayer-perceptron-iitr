@@ -6,8 +6,12 @@ MLP consists of an input layer, where each input corresponds to a single neuron 
 #### **Why MLP?**
 The XOR (exclusive OR) problem is a classic example that highlights the limitations of a Single-Layer Perceptron (SLP), in solving non-linearly separable problems. The XOR problem involves two binary inputs (0 and 1) and produces a binary output based on the exclusive OR logic:
 <center><strong>Table 1: XOR truth table</strong></center>
-<table align="center">
-  <tr>
+<center>  
+<img style="mix-blend-mode: darken;" src="images\Ex-9.1.jpg" alt="Training Dataset T">
+</center><br>
+
+<!-- <table align="center"> 
+  <tr style="background-color:#7fc3e1;" >
     <th>X₁</th>
     <th>X₂</th>
     <th>X₁ ^ X₂</th>
@@ -17,7 +21,7 @@ The XOR (exclusive OR) problem is a classic example that highlights the limitati
   <tr style="text-align:center;"><td>0</td><td>1</td><td >1</td></tr>
   <tr style="text-align:center;"><td>1</td><td>0</td><td >1</td></tr>
   <tr style="text-align:center;"><td>1</td><td>1</td><td >0</td></tr>
-</table>
+</table> -->
 
 The goal is to find a decision boundary that separates the two classes (output 0 and output 1).
 
@@ -129,16 +133,47 @@ Now let’s interpret this expression step by step:
 
 ### <center>XOR Truth Table</center>
 
-<div align="center">
+<center>  
+<img style="mix-blend-mode: darken;" src="images\Ex-9.2.jpg" alt="Training Dataset T">
+</center><br>
 
-| A | B | A·B' | A'·B | A·B' + A'·B |
-|:---:|:---:|:---:|:---:|:---:|
-| 0 | 0 | 0    | 0    | 0            |
-| 0 | 1 | 0    | 1    | 1            |
-| 1 | 0 | 1    | 0    | 1            |
-| 1 | 1 | 0    | 0    | 0            |
-
-</div>
+<!-- <table>
+    <tr style="background-color:#7fc3e1;" >
+        <th>A</th>
+        <th>B</th>
+        <th>A·B'</th>
+        <th>A'·B</th>
+        <th>A·B' + A'·B</th>
+    </tr>
+    <tr>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+</table> -->
 
 
 
