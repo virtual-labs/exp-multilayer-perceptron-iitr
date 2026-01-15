@@ -1,0 +1,1 @@
+## To understand and implement a Multi-Layer Perceptron (MLP) with focus on architecture, activation functions, and training
