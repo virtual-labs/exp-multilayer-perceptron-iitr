@@ -2320,16 +2320,35 @@ graph.addEventListener("click", () => {
 });
 
 //generate
-generateWeight.addEventListener("click", () => {
+// generateWeight.addEventListener("click", () => {
  
-  weightOne.value = 1;
-  weightTwo.value = 1;
+//   weightOne.value = -0.5;
+//   weightTwo.value = -0.5;
+
+//   weightOne.disabled = true;
+//   weightTwo.disabled = true;
+//   //biasInput.disabled = true;
+//   generateWeight.disabled = true;
+  
+// });
+
+generateWeight.addEventListener("click", () => {
+
+  if (outputLayer == true) {
+    // Output layer: Y = Z₁ + Z₂
+    weightOne.value = 1;
+    weightTwo.value = 1;
+  } 
+  else {
+    // Hidden layers: A.(B) and (A).B
+    weightOne.value = -0.5;
+    weightTwo.value = -0.5;
+  }
 
   weightOne.disabled = true;
   weightTwo.disabled = true;
-  //biasInput.disabled = true;
   generateWeight.disabled = true;
-  
+
 });
 
 //activation
