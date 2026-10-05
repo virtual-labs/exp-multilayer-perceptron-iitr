@@ -1,0 +1,147 @@
+
+/home/runner/work/exp-multilayer-perceptron-iitr/exp-multilayer-perceptron-iitr/experiment/simulation/js/script.js
+    16:5   warning  'oldWeight1' is defined but never used                                 no-unused-vars
+    16:17  warning  'oldWeight2' is defined but never used                                 no-unused-vars
+    16:61  warning  'oldBias' is defined but never used                                    no-unused-vars
+    16:70  warning  'newBias' is defined but never used                                    no-unused-vars
+    25:5   warning  'networkTab' is assigned a value but never used                        no-unused-vars
+    28:5   warning  'controlTab' is assigned a value but never used                        no-unused-vars
+    45:5   warning  'networkCanvaWithThreeBallContext' is assigned a value but never used  no-unused-vars
+    47:5   warning  'observationTableOne' is assigned a value but never used               no-unused-vars
+    48:5   warning  'observationTableTwo' is assigned a value but never used               no-unused-vars
+    49:5   warning  'observationTableThree' is assigned a value but never used             no-unused-vars
+    58:5   warning  'summationInput' is defined but never used                             no-unused-vars
+    61:5   warning  'putInThree' is assigned a value but never used                        no-unused-vars
+    62:5   warning  'putInFour' is assigned a value but never used                         no-unused-vars
+    63:5   warning  'putInFive' is assigned a value but never used                         no-unused-vars
+    64:5   warning  'flag' is defined but never used                                       no-unused-vars
+    71:5   warning  'zero' is assigned a value but never used                              no-unused-vars
+    84:5   warning  'w0' is assigned a value but never used                                no-unused-vars
+    92:5   warning  'summation' is assigned a value but never used                         no-unused-vars
+    94:5   warning  'biasCenter' is assigned a value but never used                        no-unused-vars
+    96:5   warning  'weightZero' is assigned a value but never used                        no-unused-vars
+   108:5   warning  'button' is assigned a value but never used                            no-unused-vars
+   109:5   warning  'btns' is assigned a value but never used                              no-unused-vars
+   161:5   warning  'multiLPCount' is assigned a value but never used                      no-unused-vars
+   192:3   warning  'Swal' is not defined                                                  no-undef
+   279:7   warning  'cells' is already defined                                             no-redeclare
+   379:9   warning  'Plotly' is not defined                                                no-undef
+   388:18  warning  'gate' is assigned a value but never used                              no-unused-vars
+   388:34  warning  'Swal' is not defined                                                  no-undef
+   587:3   warning  'i' is not defined                                                     no-undef
+   769:1   warning  'updateTwo' is assigned a value but never used                         no-unused-vars
+   770:1   warning  'updateThree' is assigned a value but never used                       no-unused-vars
+   771:1   warning  'updateFour' is assigned a value but never used                        no-unused-vars
+   805:9   warning  'rowCount' is already defined                                          no-redeclare
+   806:9   warning  'matchedColumns' is already defined                                    no-redeclare
+   807:14  warning  'i' is already defined                                                 no-redeclare
+   808:11  warning  'row' is already defined                                               no-redeclare
+   809:11  warning  'cells' is already defined                                             no-redeclare
+   810:11  warning  'target' is already defined                                            no-redeclare
+   811:11  warning  'actual' is already defined                                            no-redeclare
+  1458:5   warning  'Swal' is not defined                                                  no-undef
+  1481:5   warning  'Swal' is not defined                                                  no-undef
+  2063:11  warning  'inputO2ne' is not defined                                             no-undef
+  2145:9   warning  'parentElement' is already defined                                     no-redeclare
+  2150:9   warning  'calHeader' is already defined                                         no-redeclare
+  2151:9   warning  'superScript' is already defined                                       no-redeclare
+  2153:9   warning  'parentElement' is already defined                                     no-redeclare
+  2158:9   warning  'calHeader' is already defined                                         no-redeclare
+  2159:9   warning  'superScript' is already defined                                       no-redeclare
+  2161:9   warning  'parentElement' is already defined                                     no-redeclare
+  2166:9   warning  'calHeader' is already defined                                         no-redeclare
+  2167:9   warning  'superScript' is already defined                                       no-redeclare
+  2169:9   warning  'parentElement' is already defined                                     no-redeclare
+  2179:9   warning  'calHeader' is already defined                                         no-redeclare
+  2180:9   warning  'superScript' is already defined                                       no-redeclare
+  2182:9   warning  'parentElement' is already defined                                     no-redeclare
+  2187:9   warning  'calHeader' is already defined                                         no-redeclare
+  2188:9   warning  'superScript' is already defined                                       no-redeclare
+  2190:9   warning  'parentElement' is already defined                                     no-redeclare
+  2195:9   warning  'calHeader' is already defined                                         no-redeclare
+  2196:9   warning  'superScript' is already defined                                       no-redeclare
+  2198:9   warning  'parentElement' is already defined                                     no-redeclare
+  2203:9   warning  'calHeader' is already defined                                         no-redeclare
+  2204:9   warning  'superScript' is already defined                                       no-redeclare
+  2206:9   warning  'parentElement' is already defined                                     no-redeclare
+  2356:2   warning  'activeOne' is assigned a value but never used                         no-unused-vars
+  2357:4   warning  'activeTwo' is assigned a value but never used                         no-unused-vars
+  2358:4   warning  'activeThree' is assigned a value but never used                       no-unused-vars
+  2359:4   warning  'activeFour' is assigned a value but never used                        no-unused-vars
+  2384:5   warning  'Swal' is not defined                                                  no-undef
+  2399:5   warning  'Swal' is not defined                                                  no-undef
+  2438:11  warning  'Swal' is not defined                                                  no-undef
+  2469:13  warning  'row' is already defined                                               no-redeclare
+  2470:13  warning  'cells' is already defined                                             no-redeclare
+  2471:13  warning  'x1' is already defined                                                no-redeclare
+  2472:13  warning  'x2' is already defined                                                no-redeclare
+  2473:13  warning  'w1' is already defined                                                no-redeclare
+  2474:13  warning  'w2' is already defined                                                no-redeclare
+  2476:13  warning  'sum' is already defined                                               no-redeclare
+  2479:11  warning  'Swal' is not defined                                                  no-undef
+  2493:13  warning  'threshold' is already defined                                         no-redeclare
+  2511:13  warning  'row' is already defined                                               no-redeclare
+  2512:13  warning  'cells' is already defined                                             no-redeclare
+  2513:13  warning  'x1' is already defined                                                no-redeclare
+  2514:13  warning  'x2' is already defined                                                no-redeclare
+  2516:13  warning  'w1' is already defined                                                no-redeclare
+  2517:13  warning  'w2' is already defined                                                no-redeclare
+  2519:13  warning  'sum' is already defined                                               no-redeclare
+  2522:11  warning  'Swal' is not defined                                                  no-undef
+  2536:13  warning  'threshold' is already defined                                         no-redeclare
+  2554:13  warning  'row' is already defined                                               no-redeclare
+  2555:13  warning  'cells' is already defined                                             no-redeclare
+  2556:13  warning  'x1' is already defined                                                no-redeclare
+  2557:13  warning  'x2' is already defined                                                no-redeclare
+  2559:13  warning  'w1' is already defined                                                no-redeclare
+  2560:13  warning  'w2' is already defined                                                no-redeclare
+  2562:13  warning  'sum' is already defined                                               no-redeclare
+  2565:11  warning  'Swal' is not defined                                                  no-undef
+  2579:13  warning  'threshold' is already defined                                         no-redeclare
+  2597:9   warning  'rowCount' is already defined                                          no-redeclare
+  2600:14  warning  'i' is already defined                                                 no-redeclare
+  2603:15  warning  'row' is already defined                                               no-redeclare
+  2604:15  warning  'cells' is already defined                                             no-redeclare
+  2605:15  warning  'x1' is already defined                                                no-redeclare
+  2606:15  warning  'x2' is already defined                                                no-redeclare
+  2607:15  warning  'w1' is already defined                                                no-redeclare
+  2608:15  warning  'w2' is already defined                                                no-redeclare
+  2610:15  warning  'sum' is already defined                                               no-redeclare
+  2612:15  warning  'threshold' is already defined                                         no-redeclare
+  2628:15  warning  'row' is already defined                                               no-redeclare
+  2629:15  warning  'cells' is already defined                                             no-redeclare
+  2630:15  warning  'x1' is already defined                                                no-redeclare
+  2631:15  warning  'x2' is already defined                                                no-redeclare
+  2632:15  warning  'w1' is already defined                                                no-redeclare
+  2633:15  warning  'w2' is already defined                                                no-redeclare
+  2635:15  warning  'sum' is already defined                                               no-redeclare
+  2636:15  warning  'threshold' is already defined                                         no-redeclare
+  2654:15  warning  'row' is already defined                                               no-redeclare
+  2655:15  warning  'cells' is already defined                                             no-redeclare
+  2656:15  warning  'x1' is already defined                                                no-redeclare
+  2657:15  warning  'x2' is already defined                                                no-redeclare
+  2659:15  warning  'w1' is already defined                                                no-redeclare
+  2660:15  warning  'w2' is already defined                                                no-redeclare
+  2662:15  warning  'sum' is already defined                                               no-redeclare
+  2663:15  warning  'threshold' is already defined                                         no-redeclare
+  2681:15  warning  'row' is already defined                                               no-redeclare
+  2682:15  warning  'cells' is already defined                                             no-redeclare
+  2683:15  warning  'x1' is already defined                                                no-redeclare
+  2684:15  warning  'x2' is already defined                                                no-redeclare
+  2686:15  warning  'w1' is already defined                                                no-redeclare
+  2687:15  warning  'w2' is already defined                                                no-redeclare
+  2689:15  warning  'sum' is already defined                                               no-redeclare
+  2690:15  warning  'threshold' is already defined                                         no-redeclare
+  2755:7   warning  'Swal' is not defined                                                  no-undef
+  2776:7   warning  'row' is already defined                                               no-redeclare
+  2828:7   warning  'Swal' is not defined                                                  no-undef
+  2874:15  warning  'Swal' is not defined                                                  no-undef
+  2900:7   warning  'Swal' is not defined                                                  no-undef
+  2946:15  warning  'Swal' is not defined                                                  no-undef
+  3057:7   warning  'Swal' is not defined                                                  no-undef
+  3077:7   warning  'row' is already defined                                               no-redeclare
+  3121:7   warning  'Swal' is not defined                                                  no-undef
+  3161:15  warning  'Swal' is not defined                                                  no-undef
+
+✖ 142 problems (0 errors, 142 warnings)
+

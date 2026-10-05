@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Step-wise Demonstration of XOR Function Using ANN</title>
+<!-- Modern Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ========================= */
+/* THEME VARIABLES */
+/* ========================= */
+:root {
+  --primary: #6366f1;
+  --secondary: #22c55e;
+  --accent: #f59e0b;
+  --bg: #f8fafc;
+  --card-bg: rgba(255,255,255,0.92);
+  --border: rgba(0,0,0,0.08);
+  --text-dark: #1e293b;
+}
+
+/* ========================= */
+/* BASE */
+/* ========================= */
+body {
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+  font-family: 'Inter', Arial, sans-serif;
+  color: var(--text-dark);
+}
+
+/* ========================= */
+/* MAIN CONTAINER */
+/* ========================= */
+.container {
+  width: 1200px;
+  margin: 30px auto;
+  padding: 22px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  box-shadow:
+    0 25px 50px rgba(0,0,0,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.5);
+}
+
+/* ========================= */
+/* STEP */
+/* ========================= */
+.step {
+  display: none;
+  opacity: 0;
+  margin-bottom: 40px;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  transition: all 0.4s ease;
+}
+
+.step.active {
+  display: block;
+  animation: fadeSlide 0.8s ease forwards;
+}
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================= */
+/* STEP TEXT */
+/* ========================= */
+.step-text {
+  font-size: 15px;
+  line-height: 1.6;
+  background: linear-gradient(90deg, #eef2ff, #f8fafc);
+  padding: 14px 18px;
+  border-radius: 12px;
+  border-left: 5px solid var(--primary);
+  margin-bottom: 22px;
+}
+
+/* ========================= */
+/* LAYOUT */
+/* ========================= */
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ========================= */
+/* DIAGRAM */
+/* ========================= */
+.diagram {
+  position: relative;
+  width: 500px;
+  height: 220px;
+}
+
+/* ========================= */
+/* NODES */
+/* ========================= */
+.node {
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #fff;
+  box-shadow:
+    0 8px 18px rgba(0,0,0,0.15),
+    inset 0 1px 4px rgba(255,255,255,0.5);
+  transition: transform 0.3s ease;
+}
+
+.node:hover {
+  transform: scale(1.1);
+}
+
+/* Inputs */
+.x1 { top: 20px; left: 20px; background: linear-gradient(135deg, #38bdf8, #0284c7); }
+.x2 { bottom: 20px; left: 20px; background: linear-gradient(135deg, #38bdf8, #0284c7); }
+
+/* Hidden */
+.z1 { top: 80px; left: 300px; background: linear-gradient(135deg, #c084fc, #9333ea); }
+.z2 { top: 80px; left: 300px; background: linear-gradient(135deg, #c084fc, #9333ea); }
+
+/* Output */
+.y {
+  top: 80px;
+  left: 430px;
+  background: #f6c511;
+}
+
+/* ========================= */
+/* LABELS */
+/* ========================= */
+.and-label, .or-label, .eq-label {
+  position: absolute;
+  font-weight: 600;
+}
+
+.and-label, .or-label { top: 95px; left: 170px; }
+.eq-label { top: 95px; left: 370px; }
+
+/* ========================= */
+/* SVG ARROWS */
+/* ========================= */
+svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.arrow {
+  fill: none;
+  stroke: #334155;
+  stroke-width: 3;
+  marker-end: url(#arrowhead);
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.25));
+  animation: drawLine 1.2s ease forwards;
+}
+
+.arrow.delay {
+  animation-delay: 1.2s;
+}
+
+@keyframes drawLine {
+  to { stroke-dashoffset: 0; }
+}
+
+/* ========================= */
+/* TABLE */
+/* ========================= */
+table {
+  width: 260px;
+  background: #ffffff;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+  border-collapse: collapse;
+  overflow: hidden;  
+}
+
+th, td {
+  border: 2px solid #000;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+th {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: #fff;
+}
+
+tr:hover td {
+  background: #eef2ff;
+}
+
+</style>
+</head>
+
+<body>
+<!-- Container start -->
+<div class="container">
+<h2 style="text-align:center; font-size:22px; font-weight:700; color:#4f46e5;">
+Step-wise Demonstration of XOR Function Using Artificial Neural Networks
+</h2>
+<!-- STEP 1 -->
+<div class="step" id="step1">
+  <div class="step-text">
+  <b>Step 1:</b> This function outputs <b>1</b> only when <b>X1 = 1</b> and <b>X2 = 0</b>, making it
+  <b>linearly separable</b>. A straight line can separate the point
+  <b>(1, 0)</b> from all other input combinations, so a
+  <b>single-layer perceptron</b> can learn and classify this function using a
+  <b>single decision boundary</b>.
+  </div>
+
+  <div class="content">
+    <div class="diagram">
+      <!-- Tooltip -->
+      <div class="node x1" style="position:absolute;" onmouseenter="this.nextElementSibling.style.display='block'"
+           onmouseleave="this.nextElementSibling.style.display='none'">X1
+      </div>
+      <div style="position:absolute; top:5px; left:90px; background:#1e293b; color:#fff; padding:6px 10px;
+          border-radius:6px; font-size:12px; white-space:nowrap; display:none; z-index:1000;">Input Layer X1
+      </div>
+      <div class="node x2" style="position:absolute;" onmouseenter="this.nextElementSibling.style.display='block'"
+          onmouseleave="this.nextElementSibling.style.display='none'"> X2
+      </div>
+      <div style="position:absolute; bottom:5px; left:90px; background:#1e293b; color:#fff; padding:6px 10px;
+         border-radius:6px; font-size:12px; white-space:nowrap; display:none; z-index:1000;">Input Layer X2
+      </div>
+      <div class="node z1" style="position:absolute;" onmouseenter="this.nextElementSibling.style.display='block'"
+          onmouseleave="this.nextElementSibling.style.display='none'"> Z1
+      </div>
+     <div style="position:absolute; top:95px; left:390px; background:#1e293b; color:#fff; padding:6px 10px;
+         border-radius:6px; font-size:12px; white-space:nowrap; display:none; z-index:1000;">Hidden Layer Z1
+     </div>
+     <!--  -->
+      <div class="eq-label">= A·B'</div>
+      <svg  style="pointer-events:none;">
+        <defs>
+          <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#334155"/>
+          </marker>
+        </defs>
+        <path d="M75 45 L300 110" class="arrow"></path>
+        <path d="M75 175 L300 110" class="arrow delay"></path>
+      </svg>
+    </div>
+    <table>
+      <tr><th>X1</th><th>X2</th><th>A·B'</th></tr>
+      <tr><td>0</td><td>0</td><td>0</td></tr>
+      <tr><td>0</td><td>1</td><td>0</td></tr>
+      <tr style="background:#fde68a;"><td>1</td><td>0</td><td>1</td></tr>
+      <tr><td>1</td><td>1</td><td>0</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- STEP 2 -->
+<div class="step" id="step2">
+  <div class="step-text">
+  <b>Step 2:</b>This function outputs <b>1</b> only when <b>X1 = 0</b> and <b>X2= 1</b>, making it
+  <b>linearly separable</b>. A straight line can separate the point
+  <b>(0, 1)</b> from all other input combinations, so a
+  <b>single-layer perceptron</b> can learn and correctly classify this function
+  using a <b>single decision boundary</b>.
+  </div>
+
+  <div class="content">
+    <div class="diagram">
+      <!-- Tooltip -->
+      <div class="node x1" style="position:absolute;" onmouseenter="this.nextElementSibling.style.display='block'"
+           onmouseleave="this.nextElementSibling.style.display='none'">X1
+      </div>
+      <div style="position:absolute; top:5px; left:90px; background:#1e293b; color:#fff; padding:6px 10px;
+          border-radius:6px; font-size:12px; white-space:nowrap; display:none; z-index:1000;">Input Layer X1
+      </div>
+      <div class="node x2" style="position:absolute;" onmouseenter="this.nextElementSibling.style.display='block'"
+          onmouseleave="this.nextElementSibling.style.display='none'"> X2
+      </div>
+      <div style="position:absolute; bottom:5px; left:90px; background:#1e293b; color:#fff; padding:6px 10px;
+         border-radius:6px; font-size:12px; white-space:nowrap; display:none; z-index:1000;">Input Layer X2
+      </div>
+      <div class="node z2" style="position:absolute;" onmouseenter="this.nextElementSibling.style.display='block'"
+          onmouseleave="this.nextElementSibling.style.display='none'"> Z2
+      </div>
+     <div style="position:absolute; top:95px; left:390px; background:#1e293b; color:#fff; padding:6px 10px;
+         border-radius:6px; font-size:12px; white-space:nowrap; display:none; z-index:1000;">Hidden Layer Z2
+     </div>
+     <!--  --> 
+      <div class="eq-label">= A'·B</div>
+      <svg style="pointer-events:none;" >
+        <path d="M75 45 L300 110" class="arrow"></path>
+        <path d="M75 175 L300 110" class="arrow delay"></path>
+      </svg>
+    </div>
+    <table>
+      <tr><th>X1</th><th>X2</th><th>A'·B</th></tr>
+      <tr><td>0</td><td>0</td><td>0</td></tr>
+      <tr style="background:#fde68a;"><td>0</td><td>1</td><td>1</td></tr>
+      <tr><td>1</td><td>0</td><td>0</td></tr>
+      <tr><td>1</td><td>1</td><td>0</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- STEP 3 -->
+<div class="step" id="step3">
+  <div class="step-text">
+    <b>Step 3:</b> <b>Basic Theory:</b><br>
+     XOR outputs <b>1</b> when the inputs are different. It can be implemented by
+     combining the outputs of Part 1 (<b>Z1 = A·B′</b>) and Part 2
+     (<b>Z2 = A′·B</b>) using an <b>OR</b> operation.<br>
+    <b>Why Two Neurons Are Needed:</b><br>
+    XOR is <b>not linearly separable</b>, so a single neuron cannot classify it.
+    However, <b>Z1</b> and <b>Z2</b> are linearly separable, so the hidden layer
+    neurons compute them separately, allowing the network to implement
+    <b>XOR</b>.
+  </div>
+
+  <div class="content">
+    <div class="diagram">
+      <!-- Tooltip -->
+      <div class="node z1" style="top:20px; left:20px;" onmouseenter="this.nextElementSibling.style.display='block'"
+           onmouseleave="this.nextElementSibling.style.display='none'">Z1
+      </div>
+      <div style="position:absolute; top:5px; left:90px; background:#1e293b; color:#fff; padding:6px 10px;
+          border-radius:6px; font-size:12px; white-space:nowrap; display:none; z-index:1000;">Hidden Layer Z1
+      </div>
+      <div class="node z2" style="top:142px; left:20px;" onmouseenter="this.nextElementSibling.style.display='block'"
+          onmouseleave="this.nextElementSibling.style.display='none'"> Z2
+      </div>
+      <div style="position:absolute; bottom:5px; left:90px; background:#1e293b; color:#fff; padding:6px 10px;
+         border-radius:6px; font-size:12px; white-space:nowrap; display:none; z-index:1000;">Hidden  Layer Z2
+      </div>
+      <div class="node y" style="top:80px; left:300px;" onmouseenter="this.nextElementSibling.style.display='block'"
+          onmouseleave="this.nextElementSibling.style.display='none'"> Y
+      </div>
+     <div style="position:absolute; top:95px; left:390px; background:#1e293b; color:#fff; padding:6px 10px;
+         border-radius:6px; font-size:12px; white-space:nowrap; display:none; z-index:1000;">Output Y 
+     </div>
+     <!--  --> 
+      <div class="or-label">OR</div>
+      <svg style="pointer-events:none;">
+        <path d="M75 45 L300 110" class="arrow"></path>
+        <path d="M75 175 L300 110" class="arrow delay"></path>
+      </svg>
+    </div>
+    <table>
+      <tr><th>X1</th><th>X2</th><th>A·B'</th><th>A'·B</th><th>XOR</th></tr>
+      <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+      <tr><td>0</td><td>1</td><td>0</td><td>1</td><td style="background:#fde68a;">1</td></tr>
+      <tr><td>1</td><td>0</td><td>1</td><td>0</td><td style="background:#fde68a;">1</td></tr>
+      <tr><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+    </table>
+  </div>
+</div>
+
+</div>
+<!-- Container end -->
+<script>
+setTimeout(() => document.getElementById("step1").classList.add("active"), 800);
+setTimeout(() => document.getElementById("step2").classList.add("active"), 6000);
+setTimeout(() => document.getElementById("step3").classList.add("active"), 9000);
+</script>
+
+</body>
+</html>
